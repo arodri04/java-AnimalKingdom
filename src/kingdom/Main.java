@@ -48,11 +48,13 @@ public class Main {
         animalList.add(catfish);
         animalList.add(perch);
         System.out.println("DECENDING BY YEAR");
-        // animalList.sort((a1, a2) -> a1.dYear.compare(a2.dYear));
-
+        animalList.sort((a1, a2) -> a1.dYear - a2.dYear);
+        animalList.forEach((a) -> System.out.println(a.name));
         System.out.println("ALPHABATIZE ME CAPTAIN");
         animalList.sort((a1, a2) -> a1.name.compareToIgnoreCase(a2.name));
         animalList.forEach((a) -> System.out.println(a.name));
+        System.out.println("ALPHABETICALLY FROM 1758");
+        printAnimals(animalList, a -> (a.dYear == 1758));
         System.out.println("MOVEMENT");
         printAnimals(animalList, a -> (a.getMove() == "Walk"));
         printAnimals(animalList, a -> (a.getMove() == "Fly"));
@@ -63,7 +65,6 @@ public class Main {
         printAnimals(animalList, a -> (a.dYear == 1758) && (a.getBreath() == "Lungs"));
         System.out.println("LAY EGGS AND HAVE LUNGS");
         printAnimals(animalList, a -> (a.getReproduce() == "Eggs") && (a.getBreath() == "Lungs"));
-        System.out.println("ALPHABETICALLY FROM 1758");
 
     }
 
